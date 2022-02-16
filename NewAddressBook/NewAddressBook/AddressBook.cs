@@ -16,6 +16,7 @@ namespace NewAddressBook
             contacts = new Dictionary<string, Contact>();
         }
 
+        //Method Used To Create Contacts
         public void CreateContact()
         {
             Contact tempContact = new Contact();
@@ -34,7 +35,9 @@ namespace NewAddressBook
         public void Display()
         {
             foreach (string name in contacts.Keys)
-                contacts[name].Display();
+            {
+            contacts[name].Display();
+            }
         }
     }
 }
