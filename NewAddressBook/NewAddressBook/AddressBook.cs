@@ -74,7 +74,34 @@ namespace NewAddressBook
             else
                 Console.WriteLine("Name does not exist");
         }
-        
+
+        //Method Used To Delete Contact
+        public void DeleteContact()
+        {
+            Console.WriteLine("Enter name of contact to delete: ");
+            string name = Console.ReadLine();
+            if (contacts.ContainsKey(name) is true)
+            {
+                contacts.Remove(name);
+                Console.WriteLine("Successfully Deleted!!!");
+            }
+            else
+                Console.WriteLine("Name does not exist");
+        }
+
+        //Method Used To Add Multiple Contact
+        public void AddMultiple()
+        {
+            Console.WriteLine("Enter no of contacts to add");
+            int count = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < count; i++)
+            {
+                CreateContact();
+            }
+            Display();
+            Console.WriteLine("Successfully Added New Contacts");
+        }
+
 
         //Method Used To Display The Contacts
         public void Display()
