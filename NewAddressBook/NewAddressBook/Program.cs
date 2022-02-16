@@ -26,6 +26,11 @@ namespace NewAddressBook
                         address.Display();
                         break;
 
+                    case 2:
+                        address.AddContacts();
+                        address.Display();
+                        break;
+
                     default:
                         Console.WriteLine("Invalid");
                         break;
