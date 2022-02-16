@@ -39,6 +39,12 @@ namespace NewAddressBook
                         Console.WriteLine();
                         break;
 
+                    case 4:
+                        Console.WriteLine("If You Want To Exit Then Press Enter");
+                        flag=false;
+                        Console.ReadKey();  
+                        break;
+
                     default:
                         Console.WriteLine("Invalid");
                         break;
