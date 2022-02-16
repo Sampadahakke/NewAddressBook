@@ -1,0 +1,50 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace NewAddressBook
+{
+    internal class Start
+    {
+        public static void Starts()
+        {
+            AddressBook address = new AddressBook();
+
+
+            bool flag = true;
+            while (flag)
+            {
+                Console.WriteLine("\nEnter Number to Execute the Address book Program \n1. Create contacts \n2. Add contact \n3. Edit contact \n4. Exit");
+                int option = Convert.ToInt32(Console.ReadLine());
+                switch (option)
+                {
+                    case 1:
+                        Console.WriteLine("Creating A New Contact");
+                        address.CreateContact();
+                        address.Display();
+                        break;
+
+                    case 2:
+                        Console.WriteLine("Adding A New Contact");
+                        address.AddContacts();
+                        address.Display();
+                        Console.WriteLine();
+                        break;
+
+                    case 3:
+                        Console.WriteLine("Editing Existing Contact");
+                        address.EditContact();
+                        Console.WriteLine();
+                        break;
+
+                    default:
+                        Console.WriteLine("Invalid");
+                        break;
+                }
+            }
+            Console.WriteLine();
+        }
+    }
+}
