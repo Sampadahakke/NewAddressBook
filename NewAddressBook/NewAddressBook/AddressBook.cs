@@ -35,18 +35,17 @@ namespace NewAddressBook
         }
 
         //Method Used To Add Contacts
-        public void AddContacts()
+        public  void AddContacts()
         {
             tempContact.GetUserInfo();
-            string name = tempContact.GetName();
-            if (contacts.ContainsKey(name) is false)
+            if (contacts.Any(e => e.Value.Equals(tempContact))is false)
             {
-                contacts.Add(name, tempContact);
+                contacts.Add(tempContact.GetName(), tempContact);
                 Console.WriteLine("Successfully Added A New Contact!!!");
             }
             else
             {
-                Console.WriteLine("erorr");
+                Console.WriteLine("Contact already exist...");
             }
             
         }
@@ -87,6 +86,19 @@ namespace NewAddressBook
             }
             else
                 Console.WriteLine("Name does not exist");
+        }
+
+
+        public void AddMultiple()
+        {
+            Console.WriteLine("Enter no of contacts to add");
+            int count = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < count; i++)
+            {
+                CreateContact();
+            }
+            Display();
+            Console.WriteLine("Successfully Added New Contacts");
         }
 
 

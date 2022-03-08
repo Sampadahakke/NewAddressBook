@@ -17,7 +17,11 @@ namespace NewAddressBook
             bool flag = true;
             while (flag)
             {
+
                 Console.WriteLine("\nEnter Number to Execute the Address book Program \n1. Create contacts \n2. Add contact \n3. Edit contact \n4. Delete Contact \n5. Exit");
+
+                Console.WriteLine("\nEnter Number to Execute the Address book Program \n1. Create contacts \n2. Add contact \n3. Edit contact \n4. Delete Contact \n5. Add Multiple Contacts \n6. Add Multiple AddressBooks \n7. Exit");
+
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -48,6 +52,21 @@ namespace NewAddressBook
 
                     
                     case 5:
+
+
+                        Console.WriteLine("Adding Multiple Contacts");
+                        address.AddMultiple();
+                        Console.WriteLine();
+                        break;
+
+                    case 6:
+                        Console.WriteLine("Adding Multiple Address Books");
+                        AddressBookLibrary library = new AddressBookLibrary();
+                        library.AddAddressBook(address);
+                        break;
+
+                    case 7:
+
                         Console.WriteLine("If You Want To Exit Then Press Enter");
                         flag=false;
                         Console.ReadKey();  
