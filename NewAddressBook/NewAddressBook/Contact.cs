@@ -43,14 +43,15 @@ namespace NewAddressBook
         //Method To Display The Details
         public void Display()
         {
-            Console.WriteLine("*First Name:" + FirstName);
-            Console.WriteLine("*Last Name:" +LastName);
-            Console.WriteLine("*Address:" +Address);
-            Console.WriteLine("*City:" +City);
-            Console.WriteLine("*State:" +State);
-            Console.WriteLine("*Zip:" + Zip);
-            Console.WriteLine("*PhoneNumber:" +PhoneNumber);
-            Console.WriteLine("*EmailId:" +EmailId);
+            Console.WriteLine("First Name:" + FirstName);
+            Console.WriteLine("Last Name:" +LastName);
+            Console.WriteLine("Address:" +Address);
+            Console.WriteLine("City:" +City);
+            Console.WriteLine("State:" +State);
+            Console.WriteLine("Zip:" + Zip);
+            Console.WriteLine("PhoneNumber:" +PhoneNumber);
+            Console.WriteLine("EmailId:" +EmailId);
+            Console.WriteLine();
         }
 
         public string GetName()
@@ -66,6 +67,11 @@ namespace NewAddressBook
             else if (GetName()==((Contact)obj).GetName())
                 return true;
             return false;
+        }
+
+        public new string ToString()
+        {
+            return $"First Name: {FirstName},\nLast Name: {LastName}, \nAddress: {Address},\nCity:{City} , \nState{State}, \nZip:{Zip}, \nPhone Number:{PhoneNumber}, \nEmailId:{EmailId}";
         }
     }
 }
