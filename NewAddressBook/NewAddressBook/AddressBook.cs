@@ -25,7 +25,7 @@ namespace NewAddressBook
             bool flag = false;
             do
             {
-                Console.WriteLine("1. Create contacts \n2. Add contact \n3. Edit contact \n4. Delete Contact \n5. Add Multiple Contacts \n6.Display contacts in Addressbook \n7.Search using filter \n8. Exit");
+                Console.WriteLine("1. Create contacts \n2. Add contact \n3. Edit contact \n4. Delete Contact \n5. Add Multiple Contacts \n6. Display contacts in Addressbook \n7. Search using filter \n8. Sort by name \n9. Exit");
                 Console.Write("\nEnter Number to Execute the Address book Program : ");
                 int option = Convert.ToInt32(Console.ReadLine());
                 
@@ -77,6 +77,10 @@ namespace NewAddressBook
                         break;
 
                     case 8:
+                        SortByName();
+                        break;
+
+                    case 9:
                         Console.WriteLine("If You Want To Exit Then Press Enter");
                         flag = true; 
                         Console.ReadKey();
@@ -221,6 +225,15 @@ namespace NewAddressBook
             while (enumerator.MoveNext())
                 if (enumerator.Current.Value.State == state)
                     filteredList.Add(enumerator.Current.Value);
+        }
+
+        //Creating method to sort the name
+        public void SortByName()
+        {
+            foreach(KeyValuePair<string,Contact>name in contacts.OrderBy(e => e.Key))
+            {
+                Console.WriteLine($"\nKey:{name.Key} \nValue:{name.Value.ToString()}");
+            }
         }
     }
 }

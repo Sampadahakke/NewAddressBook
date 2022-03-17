@@ -71,7 +71,7 @@ namespace NewAddressBook
 
         public new string ToString()
         {
-            return $"First Name: {FirstName},\nLast Name: {LastName}, \nAddress: {Address},\nCity:{City} , \nState{State}, \nZip:{Zip}, \nPhone Number:{PhoneNumber}, \nEmailId:{EmailId}";
+            return $"\nFirst Name: {FirstName},\nLast Name: {LastName}, \nAddress: {Address},\nCity:{City} , \nState{State}, \nZip:{Zip}, \nPhone Number:{PhoneNumber}, \nEmailId:{EmailId}";
         }
     }
 }
